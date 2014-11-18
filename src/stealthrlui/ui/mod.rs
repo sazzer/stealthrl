@@ -1,7 +1,13 @@
 extern crate ncurses;
 
+mod window;
+
 #[doc = "The actual user interface"]
-pub struct UI;
+pub struct UI {
+    map_window: window::Window,
+    messages_window: window::Window,
+    status_window: window::Window,
+}
 
 impl Drop for UI {
     #[stable]
@@ -47,5 +53,9 @@ The object representing the User Interface
 pub fn create_ui() -> UI {
     debug!("Creating UI");
     ncurses::initscr();
-    UI
+    UI {
+        map_window: window::create_window(),
+        messages_window: window::create_window(),
+        status_window: window::create_window()
+    }
 }
