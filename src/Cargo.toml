@@ -6,6 +6,11 @@ authors = [
     "Graham Cox <graham@grahamcox.co.uk>"
 ]
 
+[lib]
+name = "stealthrlui"
+path = "stealthrlui/lib.rs"
+doc = true
+
 [[bin]]
 name = "stealthrl"
 path = "stealthrl/main.rs"
