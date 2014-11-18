@@ -1,0 +1,12 @@
+[package]
+
+name = "stealthrl"
+version = "0.0.1"
+authors = [
+    "Graham Cox <graham@grahamcox.co.uk>"
+]
+
+[[bin]]
+name = "stealthrl"
+path = "stealthrl/main.rs"
+doc = true
