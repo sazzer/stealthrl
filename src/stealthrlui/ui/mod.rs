@@ -1,3 +1,4 @@
+extern crate ncurses;
 
 #[doc = "The actual user interface"]
 pub struct UI;
@@ -9,6 +10,7 @@ impl Drop for UI {
     "]
     fn drop(&mut self) {
         debug!("Destroying UI");
+        ncurses::endwin();
     }
 }
 
@@ -21,7 +23,7 @@ impl UI {
     The number of cells wide
     "]
     pub fn width(&self) -> uint {
-        1u
+        ncurses::COLS as uint
     }
     #[stable]
     #[doc = "
@@ -31,7 +33,7 @@ impl UI {
     The number of cells high
     "]
     pub fn height(&self) -> uint {
-        2u
+        ncurses::LINES as uint
     }
 }
 
@@ -44,5 +46,6 @@ The object representing the User Interface
 "]
 pub fn create_ui() -> UI {
     debug!("Creating UI");
+    ncurses::initscr();
     UI
 }
