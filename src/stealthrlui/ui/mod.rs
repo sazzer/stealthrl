@@ -13,6 +13,26 @@ impl Drop for UI {
 }
 
 impl UI {
+    #[stable]
+    #[doc = "
+    Get the width of the user interface, in cells
+    
+    # Returns
+    The number of cells wide
+    "]
+    pub fn width(&self) -> uint {
+        1u
+    }
+    #[stable]
+    #[doc = "
+    Get the height of the user interface, in cells
+    
+    # Returns
+    The number of cells high
+    "]
+    pub fn height(&self) -> uint {
+        2u
+    }
 }
 
 #[experimental]
