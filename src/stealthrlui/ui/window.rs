@@ -19,12 +19,12 @@ impl Drop for Window {
 impl Window {
 }
 
-pub fn create_window() -> Window {
+pub fn create_window(x: uint, y: uint, width: uint, height: uint, name: String) -> Window {
     debug!("Creating Window");
-    Window { x: 0, 
-        y: 1, 
-        width: 2, 
-        height: 3, 
-        name: "Window".to_string()
+    Window { x: x, 
+        y: y, 
+        width: width, 
+        height: height, 
+        name: name
     }
 }
