@@ -27,7 +27,7 @@ impl UI {
     # Returns
     The number of cells wide
     "]
-    pub fn width(&self) -> uint {
+    fn width(&self) -> uint {
         ncurses::COLS as uint
     }
     #[stable]
@@ -37,8 +37,15 @@ impl UI {
     # Returns
     The number of cells high
     "]
-    pub fn height(&self) -> uint {
+    fn height(&self) -> uint {
         ncurses::LINES as uint
+    }
+    
+    #[stable]
+    #[doc = "
+    Render any changes that need to be made to the User Interface
+    "]
+    pub fn render(&self) {
     }
 }
 
@@ -59,11 +66,17 @@ pub fn create_ui() -> UI {
     let width = ui.width();
     let height = ui.height();
     
+    info!("User Interface is {}x{}", ui.width(), ui.height());
+    
     let messages_height = 10u;
     let status_width = 20u;
     
     let map_width = width - status_width;
     let map_height = height - messages_height;
+    debug!("Messages Height = {}", messages_height);
+    debug!("Status Width = {}", status_width);
+    debug!("Map Height = {}", map_height);
+    debug!("Map Width = {}", map_width);
     
     ui.windows.insert("map".to_string(), window::create_window(0, 0, map_width, map_height, "Map".to_string()));
     ui.windows.insert("messages".to_string(), window::create_window(0, map_height, width, messages_height, "Messages".to_string()));
