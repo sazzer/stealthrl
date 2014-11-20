@@ -7,5 +7,6 @@ extern crate stealthrlui;
 fn main() {
     info!("Starting...");
     let ui = stealthrlui::ui::create_ui();
+    ui.render();
     info!("Stopping...");
 }
