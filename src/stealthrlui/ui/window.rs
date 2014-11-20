@@ -17,14 +17,14 @@ impl Drop for Window {
 }
 
 impl Window {
-}
-
-pub fn create_window(x: uint, y: uint, width: uint, height: uint, name: String) -> Window {
-    debug!("Creating Window {} at ({},{}) with size ({},{})", name, x, y, width, height);
-    Window { x: x, 
-        y: y, 
-        width: width, 
-        height: height, 
-        name: name
+    pub fn new(x: uint, y: uint, width: uint, height: uint, name: String) -> Window {
+        debug!("Creating Window {} at ({},{}) with size ({},{})", name, x, y, width, height);
+        Window { x: x, 
+            y: y, 
+            width: width, 
+            height: height, 
+            name: name
+        }
     }
 }
+
