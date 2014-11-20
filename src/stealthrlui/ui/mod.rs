@@ -46,6 +46,8 @@ impl UI {
     Render any changes that need to be made to the User Interface
     "]
     pub fn render(&self) {
+        ncurses::clear();
+        ncurses::getch();
     }
 }
 
