@@ -47,6 +47,11 @@ impl UI {
     "]
     pub fn render(&self) {
         ncurses::clear();
+        debug!("Rendering UI");
+        for window in self.windows.values() {
+            window.render();
+        }
+        ncurses::doupdate();
         ncurses::getch();
     }
 
@@ -57,9 +62,10 @@ impl UI {
     # Returns
     The object representing the User Interface
     "]
-    pub fn new() -> UI {
+    pub fn new  () -> UI {
         debug!("Creating UI");
         ncurses::initscr();
+        
         let mut ui = UI {
             windows: TreeMap::new()
         };
