@@ -23,6 +23,7 @@ impl Drop for Window {
 impl Window {
     pub fn render(&self) {
         debug!("Rendering window {}", self.name);
+        ncurses::wborder(self.window, 0, 0, 0, 0, 0, 0, 0, 0);
         ncurses::mvwprintw(self.window, 1, 1, "Hello");
         ncurses::wnoutrefresh(self.window);
     }
