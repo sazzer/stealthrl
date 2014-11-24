@@ -1,0 +1,15 @@
+[package]
+name = "stealthrlui"
+version = "0.0.1"
+authors = [
+    "Graham Cox <graham@grahamcox.co.uk>"
+]
+
+[lib]
+name = "stealthrlui"
+path = "src/lib.rs"
+doc = true
+crate_type = ["dylib", "rlib"]
+
+[dependencies.ncrs]
+path = "../ncrs"

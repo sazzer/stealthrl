@@ -6,7 +6,7 @@ extern crate stealthrlui;
 #[cfg(not(test))]
 fn main() {
     info!("Starting...");
-    let ui = stealthrlui::ui::UI::new();
-    ui.render();
+stealthrlui::stealthrlui();
     info!("Stopping...");
 }
+

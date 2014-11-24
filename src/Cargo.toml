@@ -1,20 +1,14 @@
 [package]
-
 name = "stealthrl"
 version = "0.0.1"
 authors = [
     "Graham Cox <graham@grahamcox.co.uk>"
 ]
 
-[lib]
-name = "stealthrlui"
-path = "stealthrlui/lib.rs"
-doc = true
-
 [[bin]]
 name = "stealthrl"
 path = "stealthrl/main.rs"
 doc = true
 
-[dependencies.ncurses]
-git = "https://github.com/jeaye/ncurses-rs.git"
+[dependencies.stealthrlui]
+path = "stealthrlui"

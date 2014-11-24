@@ -2,6 +2,13 @@
 name = "stealthrl"
 version = "0.0.1"
 dependencies = [
+ "stealthrlui 0.0.1",
+]
+
+[[package]]
+name = "ncrs"
+version = "0.0.1"
+dependencies = [
  "ncurses 5.71.1 (git+https://github.com/jeaye/ncurses-rs.git)",
 ]
 
@@ -9,4 +16,11 @@ dependencies = [
 name = "ncurses"
 version = "5.71.1"
 source = "git+https://github.com/jeaye/ncurses-rs.git#5d9783fac92b4cb8b6219deda3a032be98b56a7d"
+
+[[package]]
+name = "stealthrlui"
+version = "0.0.1"
+dependencies = [
+ "ncrs 0.0.1",
+]
 
