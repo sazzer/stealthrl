@@ -1,5 +1,5 @@
 extern crate ncrs;
 
 pub fn stealthrlui() {
-	ncrs::ncrs();
+	let ui = ncrs::Ncrs::new();
 }
